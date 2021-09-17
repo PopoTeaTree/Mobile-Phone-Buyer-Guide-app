@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <RelativeLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:orientation="horizontal">
+
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/toolbar"
+            android:orientation="horizontal" />
+
+        <Button
+            android:id="@+id/sort_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_gravity="end"
+            android:backgroundTint="#212121"
+            android:fontFamily="sans-serif-medium"
+            android:onClick="showPopup"
+            android:text="sort"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="normal" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_below="@id/linearLayout1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal"
+        android:padding="6dp"
+        android:weightSum="2">
+        <Button
+            android:id="@+id/button_all"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:text="All" />
+
+        <Button
+            android:id="@+id/button_favorite"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:text="Favorite list" />
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/content_view"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@id/linearLayout2"
+        android:layout_marginTop="-2dp">
+        <!-- Recycle view manages car detail view -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fontFamily="Roboto-Medium"
+            tools:listitem="@layout/list_item" />
+    </ScrollView>
+</RelativeLayout>

@@ -1,0 +1,24 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.myapplication.MainActivity">
+    <item
+        android:id="@+id/Sort_HighToLow"
+        android:orderInCategory="100"
+        android:checkable="false"
+        android:title="Price (high to low)"
+        app:showAsAction="always"/>
+
+    <item
+        android:id="@+id/Sort_LowToHigh"
+        android:orderInCategory="100"
+        android:checkable="false"
+        android:title="Price (low to high)"
+        app:showAsAction="always"/>
+
+    <item
+        android:id="@+id/Sort_Rating"
+        android:checkable="false"
+        android:title="Rating(5to1)"
+        app:showAsAction="always"/>
+</menu>
